@@ -201,7 +201,7 @@ def getFreeSnapshots(_vol,_snaps,_ami,_ec2,_name):
                     # if one has no AMI nor existing volume anymore, create a record
                     have_noAMI_noVolume += 1
                     # you want to leave the line below commented out
-                    #ec2.delete_snapshot(snaps.id)
+                    #_ec2.delete_snapshot(snaps.id)
                     #snapsDeleted += 1
 
         global aaa,bbb,ccc,ddd,eee
