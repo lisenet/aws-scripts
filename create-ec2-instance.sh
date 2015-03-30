@@ -113,7 +113,7 @@ if ! aws ec2 describe-images --owners self >"$TMP";then
   exit 1;
 fi
 
-grep IMAGES "$TMP"|cut -f 5,6|awk '{print $2" "$1}'|cut -d"/" -f2|awk '{print $2" "$1}' >"$AMI_FILE";
+grep IMAGES "$TMP"|cut -f 6,7|awk '{print $2" "$1}'|cut -d"/" -f2|awk '{print $2" "$1}' >"$AMI_FILE";
 
 AMI_COUNT=$(wc -l "$AMI_FILE"|cut -d" " -f1);
 echo -e "\n(2) The number of AMIs found is "$AMI_COUNT". Listing:\n";
