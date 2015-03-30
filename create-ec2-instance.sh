@@ -427,7 +427,7 @@ if ! aws ec2 associate-address --instance-id "$INS_ID" \
 fi
 
 # Delete temp files
-rm -f "$TMP" "$VPC_FILE" "$SUBNET_FILE" "$SG_FILE" "$INS_FILE" \
-  "$VOL_FILE" "$STATUS_FILE" "$EIP_FILE";
+rm -f "$TMP" "$AMI_FILE" "$VPC_FILE" "$SUBNET_FILE" "$SG_FILE" \
+  "$INS_FILE" "$VOL_FILE" "$STATUS_FILE" "$EIP_FILE";
 
 exit 0;
