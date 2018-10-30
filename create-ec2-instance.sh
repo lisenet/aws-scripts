@@ -359,7 +359,7 @@ if ! aws ec2 run-instances  \
 fi
 
 # Get the instance ID
-INS_ID=$(grep -wo "i-........" "$INS_FILE");
+INS_ID=$(grep -wo "i-................." "$INS_FILE");
 echo ""$NAME" instance has been started. Instance ID is: "$INS_ID"";
 echo "Instance termination protection has been enabled.";
 sleep 10;
@@ -378,7 +378,7 @@ if ! aws ec2 describe-instance-attribute --instance-id "$INS_ID" \
   exit 1;
 fi
 # Assuming that the first volume ID returned is the root one
-VOL_ROOT=$(grep -wo "vol-........" "$VOL_FILE"|head -n1);
+VOL_ROOT=$(grep -wo "vol-................." "$VOL_FILE"|head -n1);
 if ! aws ec2 create-tags --resources "$VOL_ROOT" \
   --tags Key=Name,Value=""$NAME" ROOT" >/dev/null; then
   echo -e "\nERROR: failed to create tags. Please check the AMI permissions.";
